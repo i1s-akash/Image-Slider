@@ -1,0 +1,57 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Knewave', cursive;
+	font-size: 16px;
+}
+
+.wrapper{
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	width: 100%; 
+	height: 450px;
+	overflow: hidden;
+}
+
+.wrapper ul{ /*Width & overflow is not necessary here bcoz width will be changed for ul element according to li elements*/
+	position: relative;
+	list-style: none;
+	height: 450px; /*Height is as precaution whereby slider won't blink while refreshing page*/
+}
+
+.wrapper ul li{
+	position: relative;
+	width: 100%; /*Essential part for CSS & jQuery*/
+	height: 100%;
+	float: left; /*All li will stick to the left with the previous one*/
+	text-align: center;
+	line-height: 6.5;
+	font-size: 4em;
+}
+
+.wrapper a.nxt_slide, .wrapper a.prev_slide{
+	position: absolute;
+	top: 40%;
+	text-decoration: none;
+	width: 50px;
+	height: 50px;
+	background-color: #dcdde1;
+	border-radius: 50%;
+	color: #c23616;
+	z-index: 333;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+a.nxt_slide{right: 0;} a.prev_slide{left: 0;}
+
+@media only screen and (max-width: 350px){
+	.wrapper ul li{
+		font-size: 3em;
+		line-height: 8.5;
+	}
+}
